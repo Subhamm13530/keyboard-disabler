@@ -22,10 +22,15 @@ Instead of paying for expensive physical repairs, **Keyboard Shield** locks onto
 
 ## How to Use (For Users)
 
-### 1. Installation
+### 1. Installation & Setup
 1. Download the project repository folder and extract the contents.
 2. Right-click **`Setup_Installer.exe`** and select **Run as Administrator**.
 3. A command window will open to register the background device filter. Once finished, **restart your PC** to apply the system changes.
+
+> [!NOTE]
+> You only need to run **`Setup_Installer.exe`** **once** to perform the low-level driver registration and startup configuration.
+> 
+> If you exit Keyboard Shield, you can manually relaunch it at any time by simply opening/double-clicking **`KeyboardShield.exe`** (either from the extracted folder or from the permanent installation folder in `%APPDATA%\KeyboardShield`). You do not need to run the installer again.
 
 ### 2. First-Time Calibration
 1. When your computer boots back up, a window will appear stating:  
@@ -39,6 +44,12 @@ Instead of paying for expensive physical repairs, **Keyboard Shield** locks onto
    - **✨ Block All Letters & Numbers**: Instantly locks standard letters and numbers, leaving modifiers (`Ctrl`, `Alt`, `Shift`), `Delete`, and `Power` working.
    - **🛡️ Block All Keys (Except Power/Volume/Brightness/PrntScr)**: Disables the entire internal keyboard layout while specifically excluding critical laptop system buttons (physical Power/Sleep/Wake keys, volume up/down/mute, screen brightness, and print screen keys).
 4. Click **Save Settings**—your laptop keyboard is now shielded!
+
+### 4. Recalibrating the Keyboard
+If you need to change the targeted keyboard or perform a re-calibration:
+1. Right-click the blue square shield icon in your Windows System Tray.
+2. Click **Recalibrate Keyboard...**
+3. When the window appears, press any key on the target keyboard you want to disable. The utility will automatically save the updated hardware ID and resume monitoring.
 
 ---
 
