@@ -8,15 +8,15 @@ Instead of paying for expensive physical repairs, **Keyboard Shield** locks onto
 
 ## Features
 
- **Hardware-Level Discrimination:** Captures the unique device ID of your built-in laptop keyboard. Your external keyboards remain 100% functional and untouched.
- 
- **1-Click Total Block Layout:** A built-in smart button instantly blocks all alphanumeric characters (`a-z`, `0-9`) to stop chaotic ghost-typing strings immediately.
- 
- **Fail-Safe Operation:** Intentionally keeps critical operating system keys working (like `Ctrl`, `Alt`, `Shift`, `Delete`, and the physical laptop Power button) so you never get locked out (although you can manually lock it if you want).
- 
- **Seamless System Tray UI:** Runs silently in the background down by the Windows clock. Easily pause/resume blocking or trigger a hardware recalibration on the fly.
- 
- **Automated Installer:** Includes a simple administrative setup wizard to handle low-level driver registration and configure the app to launch safely on Windows startup.
+- **Interactive GUI Calibration (New in v1.1):** Dynamically records the hardware device signature of the broken internal keyboard by displaying a friendly, topmost dark-mode dialog and asking the user to press any key on it.
+- **Hardware-Level Discrimination:** Locks block rules strictly to the identified built-in laptop keyboard device ID, leaving any external USB, wireless, or Bluetooth keyboards 100% functional.
+- **Fail-Safe Presets (New in v1.1):** Instantly select from predefined block configurations:
+  - *Block All Letters & Numbers:* Locks standard keys to stop ghost letters/numbers, leaving modifiers and system shortcuts functional.
+  - *Block All Keys (Except Power/Volume/Brightness/PrntScr):* Blocks the entire keyboard layout while safeguarding critical laptop hardware keys (physical Power/Sleep buttons, media volume, display brightness, and Print Screen) to ensure you never get locked out.
+- **Safe Driver Shutdown & Hook Release (New in v1.1):** Resolves low-level driver hangs by explicitly clearing device filter hooks (`set_filter` to `0`) and resetting driver context before terminating or on keyboard disconnection, eliminating keyboard freezes.
+- **Thread-Safe Queue Architecture (New in v1.1):** Features a robust queue-based messenger system syncing the background interception thread, the detached system tray thread, and the Tkinter UI event loops, avoiding resource deadlocks.
+- **Seamless System Tray UI:** Quietly runs in the background. Right-clicking the system tray icon lets users pause/resume blocking, edit custom keys, or recalibrate the target keyboard on the fly.
+- **Automated UAC Installer (Updated in v1.1):** Setup launcher auto-requests administrative rights, registers the low-level Interception driver silently (suppressing command window flashing), copies compiled binaries to `%APPDATA%`, and configures autostart in the Windows Startup menu.
 
 ---
 
@@ -46,12 +46,11 @@ Instead of paying for expensive physical repairs, **Keyboard Shield** locks onto
 
 ```text
 Keyboard-Disabler/
-├── x64/                      # 64-bit low-level driver dependencies
-├── x86/                      # 32-bit low-level driver dependencies
 ├── install-interception.exe  # Driver registration utility
 ├── KeyboardShield.exe        # Main background application engine
 ├── Setup_Installer.exe       # Administrator configuration wizard
 ├── main.py                   # Python core UI and tray logic source code
+├── pynput_interception.py    # Custom Interception driver API wrapper & fallback
 └── installer.py              # Python setup wizard source code
 ```
 
