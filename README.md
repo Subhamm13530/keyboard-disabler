@@ -41,8 +41,8 @@ Instead of paying for expensive physical repairs, **Keyboard Shield** locks onto
 1. Right-click the blue square shield icon in your Windows System Tray (near the clock, you may need to click the carrot `^` arrow to see hidden icons).
 2. Click **Choose Keys to Block...**
 3. Type out your glitchy keys separated by commas (e.g., `q, w, space`), or choose one of the smart presets:
-   - **✨ Block All Letters & Numbers**: Instantly locks standard letters and numbers, leaving modifiers (`Ctrl`, `Alt`, `Shift`), `Delete`, and `Power` working.
-   - **🛡️ Block All Keys (Except Power/Volume/Brightness/PrntScr)**: Disables the entire internal keyboard layout while specifically excluding critical laptop system buttons (physical Power/Sleep/Wake keys, volume up/down/mute, screen brightness, and print screen keys).
+   - ** Block All Letters & Numbers**: Instantly locks standard letters and numbers, leaving modifiers (`Ctrl`, `Alt`, `Shift`), `Delete`, and `Power` working.
+   - ** Block All Keys (Except Power/Volume/Brightness/PrntScr)**: Disables the entire internal keyboard layout while specifically excluding critical laptop system buttons (physical Power/Sleep/Wake keys, volume up/down/mute, screen brightness, and print screen keys).
 4. Click **Save Settings**—your laptop keyboard is now shielded!
 
 ### 4. Recalibrating the Keyboard
